@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="member_manager.css">
+</head>
+<body>
+    <h1>Member Manager</h1>
+
+    <button id="btnAdd">Add Member</button>
+    <hr>
+    <table id="tblMembers">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Active</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="modal" id="dlgAdd">
+        <div class="modal-content">
+            <h2>Add Member</h2>
+            Name:<input id="txtName"><br>
+            Email:<input id="txtEmail"><br>
+            Active:<input type="checkbox" id="chkActive"><br>
+
+            <button id="btnSave">Save</button>
+            <button id="btnCancel">Cancel</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="member_manager.js"></script>
+</body>
+</html>

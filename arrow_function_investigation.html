@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let list = [1, 5, 3, 6, 7, 10, 9, 2, 8, 3];
+
+        // my preferred technique:
+        // declare function inline using => notation
+        list.forEach((item, index) => {
+            console.log(`${index} ${item}`);
+        });
+
+
+        /*
+        console.log("=====================================");
+        list.forEach(function(item) {
+            console.log(item);
+        });
+
+        function displayItem(item) {
+            console.log(item);
+        }
+        console.log("-----------------------------------");
+        list.forEach(displayItem);
+
+        const df = (item) => {
+            console.log(item);
+        }
+        list.forEach(df);
+
+        */
+
+        let evenNumbers = list.filter((item) => {
+            if (item %2 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        console.log(evenNumbers);
+        
+        // shorthand
+        // 1. simplify logic - just return the condition
+        // 2. if arrow fun has a single parameter leave out the round brackets
+        // 3. if arrow function has only a single line
+        //      - leave out the {}, return and ;
+        evenNumbers = list.filter(item => item %2 == 0);
+        console.log(evenNumbers);
+
+        // you can chain these together
+
+        list.filter(item => item % 2 == 0)
+            .forEach(item => console.log(item));
+
+
+        let members = [
+            {id:1, name:"Alice", email:"alice@gmail.com", active:true },
+            {id:2, name:"Bob", email:"bob@gmail.com", active:false },
+            {id:3, name:"Carol", email:"carol@gmail.com", active:true },
+            {id:4, name:"Dan", email:"dan@gmail.com", active:false },
+            {id:5, name:"Eve", email:"eve@gmail.com", active:true }
+        ];
+
+        let activeMembers = members.filter((member) => {
+            if (member.active == true) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        console.log(activeMembers);
+
+        activeMembers = members.filter(member => member.active)
+
+        console.log(activeMembers);
+
+        members.filter(member => member.active)
+            .forEach(member => console.log(member.name))
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

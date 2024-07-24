@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log("Destructuring...");
+
+        let list = [1, 2, 3, 4, 5];
+
+        let [a, b] = list;
+        
+        console.log(a);
+        console.log(b);
+        
+        // spread operator, takes the remaining items
+        let [i1, i2, ...rest] = list;
+
+        console.log(i1);
+        console.log(i2);
+        console.log(rest);
+
+
+        // same idea for an object
+        let o = {
+            id: 1,
+            name: "Alice", 
+            email: "alice@gmail.com", 
+            active: true, 
+            address: {
+                line1: "4 Riverview", 
+                line2: "Glenbrook", 
+                town: "Passage West", 
+                county: "Cork"
+            }
+        };
+
+        console.log("----------------------------------");
+        let { id, name, ...other } = o;
+
+        console.log(id);
+        console.log(name);
+        console.log(other);
+
+        let { name:theName, address: { county }} = o;
+
+        console.log(theName, county);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

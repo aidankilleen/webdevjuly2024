@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>JQuery Test</h1>
+
+    <button id="btnGetData">Get Data</button>
+
+    <table id="tblMembers">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        // JQuery is really good at the following:
+        // Event Handling
+        // DOM manipulation
+        // Ajax calls
+
+        var members = [
+            {id:1, name:"Alice", email:"alice@gmail.com", active:true },
+            {id:2, name:"Bob", email:"bob@gmail.com", active:false },
+            {id:3, name:"Carol", email:"carol@gmail.com", active:true },
+            {id:4, name:"Dan", email:"dan@gmail.com", active:false },
+            {id:5, name:"Eve", email:"eve@gmail.com", active:true }
+        ];
+
+        var url = "https://jsonplaceholder.typicode.com/users";
+
+        $(document).ready(function() {
+            $('#btnGetData').on("click", function() {
+                // Get the data from an external source
+                $.getJSON(url, function(members) {
+
+                    for (var i =0; i< members.length; i++) {
+                        $("#tblMembers tbody").append(`
+                        <tr>
+                            <td>${ members[i].id }</td>
+                            <td>${ members[i].name }</td>
+                            <td>${ members[i].email }</td>
+                            <td>${ members[i].address.city }</td>
+                        </tr>`);
+                    }
+                });
+
+            });
+        })
+    </script>
+</body>
+</html>

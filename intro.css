@@ -1,0 +1,14 @@
+/* css syntax here */
+/*
+<!-- html comments don't work in the style tag -->
+*/
+
+h1 {
+    color:green;
+}
+.heading {
+    color: blue;
+}
+#main_title {
+    color: red;
+}
